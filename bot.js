@@ -50,8 +50,7 @@ client.on("guildMemberAdd", (member) => {
         else content = settings.welcomeMessage ? settings.welcomeMessage : `The -member-, joined the server using the invitation of the -target-.`;
 
         if (invite.inviter) { 
-            db.set(`invites.${member.id}.inviter`, invite.inviter.id); 
-            if (invite.inviter.id == member.id) return;
+            db.set(`invites.${member.id}.inviter`, invite.inviter.id);
             else if(fake){
                 total = db.add(`invites.${invite.inviter.id}.total`, 1);
                 _fake = db.add(`invites.${invite.inviter.id}.fake`, 1);
