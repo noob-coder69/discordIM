@@ -51,7 +51,8 @@ client.on("guildMemberAdd", (member) => {
 
         if (invite.inviter) { 
             db.set(`invites.${member.id}.inviter`, invite.inviter.id); 
-            if(fake){
+            if (invite.inviter.id == member.id) return;
+            else if(fake){
                 total = db.add(`invites.${invite.inviter.id}.total`, 1);
                 _fake = db.add(`invites.${invite.inviter.id}.fake`, 1);
             }
