@@ -51,7 +51,7 @@ client.on("guildMemberAdd", (member) => {
 
         if (invite.inviter) { 
             db.set(`invites.${member.id}.inviter`, invite.inviter.id);
-	    if(invite.inviter.id == member.id){channel.send("tried self inviting");}
+	    if(invite.inviter.id == member.id){console.log(member.id+" joined trying self inviting");}
             else if(fake){
                 total = db.add(`invites.${invite.inviter.id}.total`, 1);
                 _fake = db.add(`invites.${invite.inviter.id}.fake`, 1);
@@ -93,7 +93,7 @@ client.on("guildMemberRemove", (member) => {
         }
         return;
     }
-    if(data.inviter == member.id){channel.send("tried self inviting");}
+    if(data.inviter == member.id){console.log(member.id+" left trying self inviting");}
     else if(data.isfake && data.inviter){
         fakecount = db.sub(`invites.${data.inviter}.fake`, 1);
         total = db.sub(`invites.${data.inviter}.total`, 1);
