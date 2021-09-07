@@ -30,7 +30,6 @@ fs.readdirSync("./Events", { encoding: "utf-8" }).filter(file => file.endsWith("
     client.on(prop.conf.event, prop.execute);
     console.log(`[EVENT] ${file} is loaded.`);
 });
-client.user.setActivity("!invites", {type: "Listening"})
 console.log("--------------------------------");
 console.log("| Preparation has been completed. Starting the bot now |");
 
