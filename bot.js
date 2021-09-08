@@ -134,7 +134,7 @@ global.onUpdateInvite = (guildMember, guild, total) => {
     possible.forEach(pos =>{
         guildMember.roles.add(pos.Id);
         channel = guildMember.guild.channels.cache.get(settings.Channel)
-        channel.send(guildMember + "got" + pos.Id
+        channel.send(guildMember + "got" + pos.Id)
 
     });
 }
