@@ -133,7 +133,7 @@ global.onUpdateInvite = (guildMember, guild, total) => {
     var possible = rewards.filter(reward => reward.Invite <= total && !guildMember.roles.cache.has(reward.Id));
     possible.forEach(pos =>{
         guildMember.roles.add(pos.Id);
-        885275468255883285.send(member+"got a role")
+        channel.send(member+"got a role")
     });
 }
 //#endregion
