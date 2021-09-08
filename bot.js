@@ -116,7 +116,7 @@ client.on("guildMemberRemove", (member) => {
         .replace("-regular-", `${regular}`)
         .replace("-fakecount-", `${fakecount}`)
         .replace("-fake-", `${data.isfake}`);
-        //channel.send(content);
+        channel.send(content);
     }
 });
 //#endregion
