@@ -11,10 +11,10 @@ exports.run = async (client, message, args) => {
     if(args.length <= 0) return message.reply("argument error");
     
     var arg = args[0].toLocaleLowerCase();
-    var types = ["leaveMessage", "welcomeMessage", "Channel", "defaultMessage"];
+    var types = ["leaveMessage", "welcomeMessage", "Channel", "defaultMessage" ,"leaveChannel"];
 
     var type = types.find(_type => _type.toLocaleLowerCase() == arg);
-    if(!type) return message.reply("you can only use `leaveMessage`, `welcomeMessage`, `Channel` and `defaultMessage` parameters.");
+    if(!type) return message.reply("you can only use `leaveMessage`, `welcomeMessage`, `Channel` ,`leaveChannel` and `defaultMessage` parameters.");
 
     const db = new Database("./Servers/" + message.guild.id, "Settings");
     db.set(`settings.${type}`, args.splice(1).join(" "));
