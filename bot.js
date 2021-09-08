@@ -108,7 +108,7 @@ client.on("guildMemberRemove", (member) => {
     if(im) global.onUpdateInvite(im, member.guild.id, Number(total) + Number(bonus));
 
     db.add(`invites.${data.inviter}.leave`, 1);
-    if(leaveChannel){
+    if(channel){
         content = content
         .replace("-member-", `${member}`)
         .replace("-target-", `${im ? im : data.inviter}`)
@@ -116,7 +116,7 @@ client.on("guildMemberRemove", (member) => {
         .replace("-regular-", `${regular}`)
         .replace("-fakecount-", `${fakecount}`)
         .replace("-fake-", `${data.isfake}`);
-        leaveChannel.send(content);
+        //channel.send(content);
     }
 });
 //#endregion
