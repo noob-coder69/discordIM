@@ -2,9 +2,6 @@
 This bot will show who invited who. It's recording and showing the total count of invitations of an user, how many of them left, etc. Do you need an invitation competition? Just for you!
 
 
-
-> Alternative Install: https://youtu.be/boe3llBi12I
-
 ## Contains
 - [x] Bonus Command
 - [x] Top Command
